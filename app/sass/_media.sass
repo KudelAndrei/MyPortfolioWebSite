@@ -15,8 +15,15 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
-
+	.wrap-container 
+		.menu-50
+			overflow: hidden
+			&.menu-text
+				width: 100%
+			&.menu-img
+				left: calc(100% - $logo-width)
+				.menu-image
+					display: none
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)

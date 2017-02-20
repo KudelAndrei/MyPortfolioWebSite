@@ -44,22 +44,98 @@ body
 
 a 
 	font-size: 30px
+	&:focus
+		outline: none
 
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
+.menu-panel
+	position: absolute
+	top: 0	
+	left: 0	
+	background-color: #fff
+	width: $logo-width
+	height: 100%
+	z-index: 10
 
+.logo
+	position: relative
+	top: 20px
+	text-align: center
+	width: 51px
+	height: 60px
+	position: absolute
+	left: 22px
+	cursor: pointer
+	z-index: 20
+	span 
+		width: 40px
+		height: 10px
+		background-color: #000
+		display: inline-block
+		position: absolute
+		transition: transfrom ease-in-out 0.2s
+		&:first-child, &:nth-child(2)
+			width: 25px
+			top: 0
+			left: 0
+			transform: rotate(-80deg)
+		&:nth-child(2)
+			top: 26px
+			transform: rotate(80deg)
+		&:nth-child(3)
+			transform: rotate(-45deg)
+			left: 16px
+			top: 5px
+			width: 30px
+		&:last-child
+			transform: rotate(-135deg)
+			left: 16px
+			top: 20px
+			width: 30px
+	&.toggle
+		span
+			&:first-child
+				transform: rotate(-134deg)
+			&:nth-child(2)
+				transform: rotate(134deg)
+
+
+@keyframes hover-menu
+	0%
+		transform: scale(1.0) translate(0, 0)
+	30%
+		transform: scale(1.04) translate(5px, 2px)
+	60%
+		transform: scale(1.08) translate(13px, 4px)
+	75%
+		transform: scale(1.06) translate(5px, 3px)
+	90%
+		transform: scale(1.04) translate(2px, 2px)
+	100%
+		transform: scale(1.0) translate(0, 0)
 
 .wrap-container	
 	position: fixed
 	width: 100%
 	height: 100%
+	
+	// если выбран пункт меню
+	&.menu--active
+		position: absolute
+		.menu-50
+			&.menu-text
+				transform: translateX(-100%)
+			&.menu-img
+				transform: translateX(calc(100% - 70px))
+		.wrap-content
+			top: 0
+
 
 	.menu-50
 		width: 50%
 		position: absolute
 		top: 0
+		overflow: hidden
+		transition: all ease-in-out 0.3s
 
 		&.menu-text
 			left: 0
@@ -84,25 +160,54 @@ a
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
-		.menu__item
-			a 
-			&:hover
-				text-decoration: none
+		li.menu__item
+			a
+				color: #000
+				padding: 5px 30px
+				font-size: 40px
+				display: inline-block
+				transition: opacity 0.2s ease
+				&:hover, &:focus
+					text-decoration: none
+					opacity: 1
+					transition-duration: 150ms
+		&:hover
+			.menu__item
+				a
+					opacity: .4
+					
 
 	.menu__image
 		opacity: .3
-		transition: opacity .3s
+		transition: opacity .4s
 		background-position: center top
 		background-size: cover
 		&.hover
 			opacity: 1
 			z-index: 3
+			animation: hover-menu 10s infinite linear
 
 	.menu__image--home
 		opacity: 1
 		z-index: 2
 
-						
+
+
+//// основной контент
+.wrap-content
+	position: absolute
+	width: calc(100% - 70px)
+	height: 100%
+	top: 100%	
+	transition-delay: 0.3s
+	transition: top ease-in-out 0.5s
+
+	.section
+		height: 100%
+		background-color: #fafafa
+		display: none
+		&.section--active
+			display: block
 
 
 @import "media" // Всегда в конце
