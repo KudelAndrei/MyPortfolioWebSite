@@ -1,10 +1,11 @@
 $(document).ready(function(){
 
-	////// Сделать прелоадер ////////
-
+	$('.cssload-thecube').fadeOut();
+	$('.container-fluid').removeClass('loader');
+	
 	function loadMenu(){
 		$('.menu__item').each(function(i){
-			$(this).show(300*i).delay(console.log(100*i+300));
+			$(this).show(300*i).delay(150*i);
 		});
 	};
 
@@ -66,14 +67,13 @@ $(document).ready(function(){
 
 	$('.logo').click(toggle);
 	$('.menu__item').hover(hover);
-	$('.menu__item').click(section);
+	$('.menu__item a').click(section);
 
 	// закрытие меню
 	$(".toggle").click(function(){
 		$('.section').removeClass('section--active');
 		$(".wrap-container").toggleClass("menu--active");
 			$(this).removeClass("toggle");
-			tetx1 = 'text';
 			$('.text-active').text();
 	});
 
