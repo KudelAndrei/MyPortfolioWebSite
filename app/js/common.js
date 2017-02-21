@@ -1,9 +1,18 @@
 $(document).ready(function(){
 
+
+	function loadMenu(){
+		$('.menu__item').each(function(i){
+			$(this).show(300*i).delay(console.log(100*i+300));
+		});
+	};
+
+	loadMenu(1000);
+
+
 	toggle = function toggleMenu(){
 		if ($(this).hasClass('toggle')){
 			$(this).removeClass('toggle');
-
 			textHome = "Home";
 			$('.text-active').text(textHome);
 			$('.wrap-container').removeClass('menu--active');
@@ -16,6 +25,7 @@ $(document).ready(function(){
 			$('.menu__image').siblings().removeClass("hover");
 			$('.menu__image--about').addClass('hover');
 			$(this).click(function(){
+				//$(this).hide(300);
 				$('.section').removeClass('section--active');
 				$('.about').fadeIn(1000);
 			});
@@ -24,7 +34,6 @@ $(document).ready(function(){
 			$('.menu__image').siblings().removeClass("hover");
 			$('.menu__image--skills').addClass('hover');
 			$(this).click(function(){
-				$('.section').removeClass('section--active');
 				$('.skills').show(1000);
 			});
 		}
