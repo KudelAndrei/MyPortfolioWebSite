@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+	////// Сделать прелоадер ////////
 
 	function loadMenu(){
 		$('.menu__item').each(function(i){
