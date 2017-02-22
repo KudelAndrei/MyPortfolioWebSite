@@ -15,7 +15,7 @@ $(document).ready(function(){
 	toggle = function toggleMenu(){
 		if ($(this).hasClass('toggle')){
 			$(this).removeClass('toggle');
-			textHome = "Home";
+			textHome = "Главная";
 			$('.text-active').text(textHome);
 			$('.wrap-container').removeClass('menu--active');
 			$('.section').fadeOut(500);
@@ -60,14 +60,14 @@ $(document).ready(function(){
 	section = function toggleSection(){
 		$(".wrap-container").addClass("menu--active");
 		$(".logo").addClass("toggle");
-		text = $(this).text();
+		text = $(this).children('a').text();
 		$('.text-active').text(text);
 	};
 
 
 	$('.logo').click(toggle);
 	$('.menu__item').hover(hover);
-	$('.menu__item a').click(section);
+	$('.menu__item').click(section);
 
 	// закрытие меню
 	$(".toggle").click(function(){
