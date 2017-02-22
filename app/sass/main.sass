@@ -45,11 +45,25 @@ body
 
 a 
 	font-size: 30px
-	&:focus
+	color: #000
+	&:focus, &:hover
 		outline: none
+		text-decoration: none
 
 .loader
 	opacity: 0
+
+.falltext
+	opacity: 0
+	transform-origin: top center
+	display: inline-block
+	font-size: 22px
+	line-height: 18px
+	position: absolute
+	top: 100%
+	right: 0	
+	color: rgba(#000, 0.5)
+	font-weight: 300
 
 /// прелоадер //////////
 .cssload-thecube 
@@ -141,9 +155,8 @@ a
 			white-space: nowrap
 			transition: all ease-in-out 0.4s
 			font-family: "Open Sans", sans-serif
-			font-size: 50px
-			font-weight: 700
-			text-transform: uppercase
+			font-size: 22px
+			font-weight: 500
 
 .logo
 	position: relative
@@ -299,15 +312,10 @@ a
 					opacity: 1
 					transition-duration: 150ms
 			span
-				opacity: 0
-				transform-origin: top center
-				display: inline-block
-				font-size: 16px
-				line-height: 18px
+				@extend .falltext
 				margin-top: -10px
-				position: absolute
-				top: 90%
-				color: rgba(#000, 0.5)
+				top: 100%
+				right: 15%
 			&:hover
 				span
 					animation: animated 0.6s cubic-bezier(.77,0,.18,1) forwards
@@ -350,11 +358,12 @@ a
 			transition-delay: 3s
 		p 
 			font-family: "Open Sans", sans-serif
-		.section--center
+		&.section--center
 			text-align: center
 		.section__head
 			font-size: 60px
 			line-height: 78px
+			text-transform: uppercase
 	
 	.col-50
 		position: relative
@@ -381,6 +390,53 @@ a
 			color: #000
 	.about__description
 		font-size: 20px
+
+.contact
+	.contact__head
+		position: relative
+		perspective: 1000
+		display: inline-block
+		span
+			@extend .falltext
+	.section--center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	&:not(display)
+		.contact__head
+			span
+				animation: animated 1s 0.7s cubic-bezier(.77,0,.18,1) forwards
+
+	.contact-info
+		margin-bottom: 20px
+		.contact-info__item
+			margin-left: 20px
+			display: block
+			i 
+				margin-right: 10px
+				display: inline-block
+			a 
+				position: relative
+				opacity: .8
+				span
+					@extend .falltext
+					top: 90%
+					font-size: 16px
+					font-weight: 700
+				&:hover
+					opacity: .95
+					color: #000
+					span
+						animation: animated 0.7s cubic-bezier(.77,0,.18,1) forwards
+
+	.contact-social
+		text-align: center
+		.contact-social__item
+			display: inline-block
+			a 
+				padding: 0 10px	
+
 
 
 @import "media" // Всегда в конце

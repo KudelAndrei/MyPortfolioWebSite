@@ -11,7 +11,6 @@ $(document).ready(function(){
 
 	loadMenu(1000);
 
-
 	toggle = function toggleMenu(){
 		if ($(this).hasClass('toggle')){
 			$(this).removeClass('toggle');
@@ -20,6 +19,13 @@ $(document).ready(function(){
 			$('.wrap-container').removeClass('menu--active');
 			$('.section').fadeOut(700);
 		}
+	};
+
+	loadContact = function(){
+		$('.contact').siblings().each(function(i){
+			per = $(this).text(i);
+			console.log(per);
+		})
 	};
 
 	hover = function hoverMenu(){
@@ -52,7 +58,7 @@ $(document).ready(function(){
 			$('.menu__image--contact').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
-				$('.contact').fadeIn(1000);
+				$('.contact').fadeIn();
 			});
 		}
 	};
