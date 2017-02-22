@@ -18,7 +18,7 @@ $(document).ready(function(){
 			textHome = "Главная";
 			$('.text-active').text(textHome);
 			$('.wrap-container').removeClass('menu--active');
-			$('.section').fadeOut(500);
+			$('.section').fadeOut(700);
 		}
 	};
 
@@ -36,7 +36,7 @@ $(document).ready(function(){
 			$('.menu__image').siblings().removeClass("hover");
 			$('.menu__image--skills').addClass('hover');
 			$(this).click(function(){
-				$('.skills').show(1000);
+				$('.skills').fadeIn(1000);
 			});
 		}
 		else if ($(this).hasClass('menu__item--work')){
@@ -44,7 +44,7 @@ $(document).ready(function(){
 			$('.menu__image--work').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
-				$('.work').show(1000);
+				$('.work').fadeIn(1000);
 			});
 		}
 		else if ($(this).hasClass('menu__item--contact')){
@@ -52,7 +52,7 @@ $(document).ready(function(){
 			$('.menu__image--contact').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
-				$('.contact').show(1000);
+				$('.contact').fadeIn(1000);
 			});
 		}
 	};
