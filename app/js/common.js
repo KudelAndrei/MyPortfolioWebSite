@@ -21,12 +21,15 @@ $(document).ready(function(){
 		}
 	};
 
+/*
+	// для постепенного появления контактов
 	loadContact = function(){
 		$('.contact').siblings().each(function(i){
 			per = $(this).text(i);
 			console.log(per);
 		})
 	};
+*/
 
 	hover = function hoverMenu(){
 		if($(this).hasClass('menu__item--about')){
@@ -51,7 +54,16 @@ $(document).ready(function(){
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
 				$('.work').fadeIn(1000);
-			});
+				$(window).scroll(function () {
+    				var wScroll = $(this).scrollTop();
+    					$('.work__card').each(function(i){
+    						if ($('.work__card').offset().top > wScroll - 500){
+									$('.work__card').fadeIn(300*i).delay(300*i);
+									console.log("hi");
+								}
+    					});
+    				});
+				});
 		}
 		else if ($(this).hasClass('menu__item--contact')){
 			$('.menu__image').siblings().removeClass("hover");
