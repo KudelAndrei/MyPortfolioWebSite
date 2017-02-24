@@ -87,6 +87,21 @@ $(document).ready(function(){
 		$('.text-active').text(text);
 	};
 
+	/* Функция параллакса 
+	function parallaxWork(){
+		var scrolled = $(window).scrollTop();
+  	$('.work__card').css('background-position-y',-(scrolled/10)+'px');
+  	console.log(scrolled);
+
+  	$(window).scroll(function(e){
+		  parallaxWork();
+		});
+	}*/
+
+	 $('.work').parallax({});
+
+	
+
 	/* Вызов функция */
 	$('.logo').click(toggleMenu);
 	$('.menu__item').hover(hoverMenu);
