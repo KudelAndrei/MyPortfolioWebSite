@@ -1,8 +1,10 @@
 $(document).ready(function(){
+	$(window).on('load resize', windowMobile);
 
 	$('.cssload-thecube').fadeOut();
 	$('.container-fluid').removeClass('loader');
 	
+	/* Функция для постепенного появления меню */
 	function loadMenu(){
 		$('.menu__item').each(function(i){
 			$(this).show(300*i).delay(150*i);
@@ -11,7 +13,16 @@ $(document).ready(function(){
 
 	loadMenu(1000);
 
-	toggle = function toggleMenu(){
+	/* Функция для мобильного экрана */
+	function windowMobile(){
+		if ($(window).width() <= '768')
+				$('.container-fluid').addClass('mobile');
+			else
+				$('.container-fluid').removeClass('mobile');
+	}
+
+	/* Функция вызывается при нажатии на логопит (для открытия меню) */
+	function toggleMenu(){
 		if ($(this).hasClass('toggle')){
 			$(this).removeClass('toggle');
 			textHome = "Главная";
@@ -31,7 +42,8 @@ $(document).ready(function(){
 	};
 */
 
-	hover = function hoverMenu(){
+	/* Функция выполняется при наведении на меню и при нажатии */
+	function hoverMenu(){
 		if($(this).hasClass('menu__item--about')){
 			$('.menu__image').siblings().removeClass("hover");
 			$('.menu__image--about').addClass('hover');
@@ -45,6 +57,7 @@ $(document).ready(function(){
 			$('.menu__image').siblings().removeClass("hover");
 			$('.menu__image--skills').addClass('hover');
 			$(this).click(function(){
+				$('.section').removeClass('section--active');
 				$('.skills').fadeIn(1000);
 			});
 		}
@@ -66,17 +79,18 @@ $(document).ready(function(){
 		}
 	};
 
-	section = function toggleSection(){
+	/* Функиция при нажатии на меню */
+	function toggleSection(){
 		$(".wrap-container").addClass("menu--active");
 		$(".logo").addClass("toggle");
 		text = $(this).children('a').text();
 		$('.text-active').text(text);
 	};
 
-
-	$('.logo').click(toggle);
-	$('.menu__item').hover(hover);
-	$('.menu__item').click(section);
+	/* Вызов функция */
+	$('.logo').click(toggleMenu);
+	$('.menu__item').hover(hoverMenu);
+	$('.menu__item').click(toggleSection);
 
 	// закрытие меню
 	$(".toggle").click(function(){
