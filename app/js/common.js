@@ -61,7 +61,7 @@ $(document).ready(function(){
 			$('.menu__image--contact').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
-				$('.contact').fadeIn();
+				$('.contact').fadeIn(1000);
 			});
 		}
 	};
@@ -86,6 +86,22 @@ $(document).ready(function(){
 			$('.text-active').text();
 	});
 
+	// вспывашки
+	$('.popup-with-zoom-anim').magnificPopup({
+		type: 'inline',
+
+		fixedContentPos: false,
+		fixedBgPos: true,
+
+		overflowY: 'auto',
+
+		closeBtnInside: true,
+		preloader: false,
+		
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in'
+	});
 
 
 });
