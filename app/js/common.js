@@ -48,7 +48,6 @@ $(document).ready(function(){
 			$('.menu__image').siblings().removeClass("hover");
 			$('.menu__image--about').addClass('hover');
 			$(this).click(function(){
-				//$(this).hide(300);
 				$('.section').removeClass('section--active');
 				$('.about').fadeIn(1000);
 			});
@@ -87,20 +86,21 @@ $(document).ready(function(){
 		$('.text-active').text(text);
 	};
 
-	/* Функция параллакса 
+
+	/*
+	function getRandomArbitrary(min, max) {
+	  return Math.random() * (max - min) + min;
+	}
 	function parallaxWork(){
-		var scrolled = $(window).scrollTop();
-  	$('.work__card').css('background-position-y',-(scrolled/10)+'px');
-  	console.log(scrolled);
+		var scrolled = $(window).scrollTop()/getRandomArbitrary(10, 20);
+	  	$('.work__card').css('background-position-y',-(scrolled)+'px');
+	  	console.log(scrolled);
+	};
+	$(window).scroll(function(e){
+	  parallaxWork();
+	});
+	*/
 
-  	$(window).scroll(function(e){
-		  parallaxWork();
-		});
-	}*/
-
-	 $('.work').parallax({});
-
-	
 
 	/* Вызов функция */
 	$('.logo').click(toggleMenu);
