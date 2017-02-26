@@ -148,7 +148,7 @@ a
 		width: 100%
 		height: 100%
 		.text-active
-			transform: rotate(-90deg) translate(-50%, -50%)
+			transform: rotate(-90deg) translate(0%, -50%)
 			top: 50%
 			left: 50%
 			opacity: .3
@@ -159,7 +159,6 @@ a
 			max-width: 100%
 			white-space: nowrap
 			transition: all ease-in-out 0.4s
-			font-family: "Open Sans", sans-serif
 			font-size: 22px
 			font-weight: 500
 
@@ -418,9 +417,106 @@ a
 
 
 /// навыки
+.section
+	&.skills
+		.skills
+			&--html
+				font-size: 60px
+				.skills-item h1::before
+					color: #e44d26
+			&--css
+				font-size: 50px
+				.skills-item h1::before
+					color: #2062af
+			&--sass 
+				font-size: 30px
+				height: 140px
+				.skills-item h1::before
+					color: #cf649a
+			&--less
+				font-size: 20px
+				height: 80px
+				font-style: italic
+				.skills-item h1::before
+					color: red
+			&--js
+				font-size: 18px
+				text-transform: none
+				.skills-item h1::before
+					color: red
+			&--jquery
+				font-size: 28px
+				height: 130px
+				.skills-item h1::before
+					color: #6ba0ab
+			&--ts
+				font-size: 20px
+				height: 90px
+				.skills-item h1::before
+					color: red
+			&--bootstrap
+				font-size: 28px
+				.skills-item h1::before
+					color: #563d7c
+			&--angular
+				font-size: 18px
+				height: 120px
+				.skills-item h1::before
+					color: red
+			&--git
+				font-size: 20px
+				height: 120px
+				.skills-item h1::before
+					color: red
+			&--bem
+				font-size: 28px
+				height: 120px
+				.skills-item h1::before
+					color: red
 .skills
-	
+	.skills-item
+		position: relative
+		height: 240px
+		background-color: #fff
+		margin-bottom: 20px
+		border-radius: 2px
+		box-shadow: 0 2px 4px rgba(#444,0.1), 0 2px 4px rgba(#444,0.2)
+		transition: box-shadow 0.2s ease-in-out
+		.skills-item__name
+			text-transform: uppercase
+			position: absolute
+			top: 50%
+			text-align: center
+			display: block
+			width: 100%
+			transform: translateY(-50%)
+			h1
+				position: relative
+				display: inline-block
+				&::before
+					position: absolute
+					top: 0
+					left: 0
+					line-height: inherit
+					font-size: inherit
+					font-style: inherit
+					content: attr(data-text)
+					color: #cf649a
+					white-space: nowrap
+					width: 0
+					overflow: hidden
+					transition: all ease 0.4s
 
+		&:hover
+			box-shadow: 0 0 0 rgba(#444,0.1), 0 0 2px rgba(#444,0.2)
+			.skills-item__name
+				h1::before
+					width: 100%
+				
+
+
+.text--vertical
+	transform: rotate(-90deg)
 
 
 
@@ -578,6 +674,36 @@ a
 /* Стили для мобильных дисплеев */
 .container-fluid
 	&.mobile
+		.logo
+			span 
+				height: 5px
+				width: 20px
+				&:first-child
+					top: 7px
+					left: 4px
+				&:nth-child(2)
+					top: 27px
+					left: 4px
+				&:nth-child(3)
+					top: 13px
+					left: 15px
+				&:nth-child(4)
+					top: 24px
+					left: 15px
+			&.toggle
+				span
+					&:first-child
+						left: 21px
+					&:nth-child(2)
+						top: 20px
+						left: 21px
+					&:nth-child(3)
+						top: 7px
+						left: 9px
+					&:nth-child(4)
+						top: 20px
+						left: 7px
+
 		.menu-panel
 			width: 50px
 		.menu-50
