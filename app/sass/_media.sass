@@ -29,15 +29,31 @@
 				left: calc(100% - 70px)
 				.menu-image
 					display: none
+	.section
+		&.skills
+			.skills-item
+				height: 80px
+				font-size: 22px
+			.skills
+				&--html
+					margin-bottom: 20px
+					height: 80px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+	.wrap-container 
+		.menu 
+			li.menu__item a h2
+				font-size: 28px
+				line-height: 50px
+				
 	.wrap-content 
 		.section 
 			.section__head
 				font-size: 44px
 				line-height: 48px
 				margin-bottom: 40px
+
 		.contact 
 			.contact-info 
 				margin-bottom: 5px
@@ -66,7 +82,8 @@
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px)
-	/**/
+	.text--vertical
+		transform: rotate(-90deg)
 
 
 /* Medium Devices, Desktops */
