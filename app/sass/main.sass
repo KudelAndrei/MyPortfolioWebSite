@@ -473,6 +473,7 @@ a
 				.skills-item h1::before
 					color: red
 .skills
+	// скрытая часть
 	.skills-item
 		position: relative
 		height: 240px
@@ -511,8 +512,37 @@ a
 			.skills-item__name
 				h1::before
 					width: 100%
-				
 
+	//новая часть
+	.skills-cards, .tools
+		.skills-card, .tools__item
+			position: relative
+			max-width: 300px
+			min-width: 200px
+			margin-bottom: 20px
+			margin-right: 15px
+			display: inline-block
+			margin-bottom: 20px
+			.skills__img, .tools__img
+				width: 80px
+				display: inline-block
+				img
+					width: 100%	
+					display: inline-block
+			h1 
+				font-size: 30px
+				text-transform: uppercase
+				display: inline-block
+
+	.skills-white
+		background-color: #fff
+		min-height: 100vh
+	.skills-dark
+		background-color: #333
+		color: #fff
+		min-height: 100vh
+		span 
+			color: #fff
 
 
 		
