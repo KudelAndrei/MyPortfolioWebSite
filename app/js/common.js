@@ -3,6 +3,11 @@ $(document).ready(function(){
 
 	$('.cssload-thecube').fadeOut();
 	$('.container-fluid').removeClass('loader');
+
+		/* Анимация */
+		
+
+
 	
 	/* Функция для постепенного появления меню */
 	function loadMenu(){
@@ -42,6 +47,41 @@ $(document).ready(function(){
 	};
 */
 
+	/*
+	function eachSlide(){
+		slidefirst = $('.work__doc-slider').children().first();
+		$('.slider-img').siblings().removeClass('slider-img--active');
+		slidefirst.next().addClass('slider-img--active');
+	};
+
+
+	function sliderWork(){
+		if($('.zoom-anim-dialog').hasClass('mfp-hide')){
+			setInterval(eachSlide, 4000);
+		}
+	}
+	*/
+
+	
+
+	$('.link-more').click(function(){
+		if ($('.work__doc').hasClass('mfp-hide')){
+			setInterval(nextSlide, 6000);	
+		}
+		clearInterval(nextSlide);
+		
+	});
+
+	var slides = document.querySelectorAll('.work__doc-slider .slider-img');
+	var currentSlide = 0;
+
+	function nextSlide(){
+		slides[currentSlide].className = 'slider-img';
+		currentSlide = (currentSlide+1)%slides.length;
+		slides[currentSlide].className = 'slider-img slider-img--active';
+	}
+
+
 	/* Функция выполняется при наведении на меню и при нажатии */
 	function hoverMenu(){
 		if($(this).hasClass('menu__item--about')){
@@ -49,7 +89,12 @@ $(document).ready(function(){
 			$('.menu__image--about').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
-				$('.about').fadeIn(1000);
+				$('.about').fadeIn(500);
+				/* анимация */
+				$('.about__image').addClass('animated fadeInLeftBig');
+				$('.section__head.about__head').addClass('animated fadeInDown');
+				$('.about__description').addClass('animated fadeInRight');
+				/* end */
 			});
 		}
 		else if ($(this).hasClass('menu__item--skills')){
@@ -57,7 +102,16 @@ $(document).ready(function(){
 			$('.menu__image--skills').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
-				$('.skills').fadeIn(1000);
+				$('.skills').fadeIn(500);
+				/* анимация */
+				$('.section__head').addClass('animated fadeInDown');
+				$('.skills-card').each(function(i){
+					setTimeout(function() {
+						$('.skills-card').eq(i).addClass('animated fadeInDown');
+					}, 400*i);		
+				});
+				console.log('ns xr');
+				/* end */
 			});
 		}
 		else if ($(this).hasClass('menu__item--work')){
@@ -66,6 +120,9 @@ $(document).ready(function(){
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
 				$('.work').fadeIn(1000);
+				/* анимация */
+
+				/* end */
 			});
 		}
 		else if ($(this).hasClass('menu__item--contact')){
@@ -74,6 +131,8 @@ $(document).ready(function(){
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
 				$('.contact').fadeIn(1000);
+				/* анимация */
+				/* end */
 			});
 		}
 	};
@@ -84,6 +143,7 @@ $(document).ready(function(){
 		$(".logo").addClass("toggle");
 		text = $(this).children('a').text();
 		$('.text-active').text(text);
+		//
 	};
 
 
@@ -113,6 +173,7 @@ $(document).ready(function(){
 		$(".wrap-container").toggleClass("menu--active");
 			$(this).removeClass("toggle");
 			$('.text-active').text();
+			$('.skills-card').siblings().removeClass('animated');
 	});
 
 	// вспывашки

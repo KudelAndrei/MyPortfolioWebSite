@@ -415,6 +415,9 @@ a
 
 	.about-image
 		display: none
+		max-width: 400px
+		border-radius: 50%
+		margin: 30px auto 
 		max-width: 500px
 		border-radius: 50%
 		overflow: hidden
@@ -484,6 +487,7 @@ a
 				.skills-item h1::before
 					color: red
 .skills
+	text-align: center
 	// скрытая часть
 	.skills-item
 		position: relative
@@ -526,7 +530,9 @@ a
 
 	//новая часть
 	.skills-cards, .tools
+		padding-top: 25px
 		.skills-card, .tools__item
+			display: none
 			position: relative
 			max-width: 300px
 			min-width: 200px
@@ -534,6 +540,11 @@ a
 			margin-right: 15px
 			display: inline-block
 			margin-bottom: 20px
+			vertical-align: center
+			.skills__img, .tools__img
+				width: 80px
+				display: inline-block
+				margin: 0 auto
 			.skills__img, .tools__img
 				width: 80px
 				display: inline-block
@@ -543,6 +554,8 @@ a
 			h1 
 				font-size: 30px
 				text-transform: uppercase
+				display: block
+				margin-top: 0
 				display: inline-block
 
 	.skills-white
@@ -577,6 +590,7 @@ a
 		z-index: 10
 		img
 			width: 100%
+			transition: all ease-in-out 0.3s
 			transition: all ease-in-out 0.4s
 			filter: grayscale(0.8)
 		&::after
@@ -588,12 +602,17 @@ a
 			right: 0
 			background-color: rgba(#fff, 0.2)
 			transition: background-color ease-in-out 0.3s
-			z-index: -1
+			z-index: 0
 
 		&:hover
 			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.19)
 			//box-shadow: 0 3px 6px rgba(#222,0.1), 0 3px 6px rgba(#222,0.2)
 			img
+				filter: grayscale(0) blur(1px)
+				animation: hover-menu 10s infinite linear
+
+			&::after
+				background-color: rgba($color-text, .3)
 				filter: grayscale(0)
 				animation: hover-menu 10s infinite linear
 			&::after
@@ -616,6 +635,7 @@ a
 			font-size: 20px
 			text-align: center
 			transition: all ease-in-out 0.2s
+			z-index: 1
 			i 
 				line-height: 40px
 			&.link-more
@@ -650,8 +670,39 @@ a
 			font-size: 26px
 			transform: rotate(-90deg)
 			transition: 0.3s 0.2s ease-in-out right
+			z-index: 1
 			i 
 				margin-right: 10px
+
+// документация работ
+.work__doc
+	background-color: #fff
+	padding: 0
+	max-width: 800px
+	.mfp-close
+		top: -40px
+		color: #fff
+	&-content
+		padding: 20px
+	&-head
+		margin-top: 0
+		margin-bottom: 10px
+
+.work__doc-slider
+	position: relative
+	height: 400px
+	overflow: hidden
+	.slider-img
+		position: absolute
+		opacity: 0
+		width: 100%
+		transition: opacity 0.2s ease
+		&--active
+			opacity: 1
+
+
+
+
 
 //// контакты
 .contact
@@ -758,7 +809,21 @@ a
 					transform: translateX(0)
 			.wrap-content
 				width: calc(100% - 50px)
+
+
+		.section
+			.section__head
+				font-size: 38px
 		
+		.skills
+			.skills-dark
+				.section__head
+					padding-top: 30px
+
+		
+		.about
+			.about-image
+				display: inline-block
 		.about
 			.about-image
 				display: block
@@ -767,6 +832,8 @@ a
 			.about__content
 				width: 100%
 				float: none
+				padding: 0 10px
+
 
 		.work 
 			.work__card
