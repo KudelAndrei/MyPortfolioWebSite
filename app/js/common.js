@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$('.container-fluid').removeClass('loader');
 
 		/* Анимация */
-		
+		$('.section__head').addClass('animated fadeInDown');
 
 
 	
@@ -104,13 +104,11 @@ $(document).ready(function(){
 				$('.section').removeClass('section--active');
 				$('.skills').fadeIn(500);
 				/* анимация */
-				$('.section__head').addClass('animated fadeInDown');
-				$('.skills-card').each(function(i){
+				$('.skills-card, .tools__item').each(function(i){
 					setTimeout(function() {
-						$('.skills-card').eq(i).addClass('animated fadeInDown');
-					}, 400*i);		
+						$('.skills-card, .tools__item').eq(i).addClass('animated fadeInUp');
+					}, 200*i);		
 				});
-				console.log('ns xr');
 				/* end */
 			});
 		}
@@ -119,9 +117,9 @@ $(document).ready(function(){
 			$('.menu__image--work').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
-				$('.work').fadeIn(1000);
+				$('.work').fadeIn(500);
 				/* анимация */
-
+				$('.work__card').addClass('animated fadeInDown');
 				/* end */
 			});
 		}
@@ -130,8 +128,13 @@ $(document).ready(function(){
 			$('.menu__image--contact').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
-				$('.contact').fadeIn(1000);
+				$('.contact').fadeIn(500);
 				/* анимация */
+				$('.skills-card, .tools__item').each(function(i){
+					setTimeout(function() {
+						$('.contact-info__item, .contact-social__item').eq(i).addClass('animated fadeInUp');
+					}, 200*i);		
+				});
 				/* end */
 			});
 		}
@@ -173,7 +176,6 @@ $(document).ready(function(){
 		$(".wrap-container").toggleClass("menu--active");
 			$(this).removeClass("toggle");
 			$('.text-active').text();
-			$('.skills-card').siblings().removeClass('animated');
 	});
 
 	// вспывашки
