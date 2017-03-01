@@ -2,8 +2,9 @@
 
 $default-font: "Oswald", sans-serif
 $logo-width: 70px
-$color-text: #333333
+$color-text: #333
 $height-skills: 250px
+$gradient: linear-gradient( top left, rgba(59,173,227,0.05) 5%, rgba(87,111,230,0.15) 25%, rgba(152,68,183,0.25) 51%, rgba(255,53,127,0.3) 100%)
 
 
 .section
@@ -12,3 +13,31 @@ $height-skills: 250px
 	li.menu__item
 		a 
 			font-weight: 500
+
+@mixin gradient-text($gradient, $bg : 'light') 
+	@supports(mix-blend-mode: lighten) 
+		display: inline-block
+		position: relative
+		&::before 
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background: unquote($gradient)
+			pointer-events: none
+		@if ($bg == 'light') 
+			color: #333
+			background: #fff
+			mix-blend-mode: multiply
+			&::before 
+				mix-blend-mode: screen
+		@else 
+			color: #fff
+			background: #333
+			mix-blend-mode: lighten
+			&::before 
+				mix-blend-mode: multiply
+
