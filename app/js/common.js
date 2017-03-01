@@ -1,11 +1,16 @@
+$(window).on('load', function () {
+   $('.cssload-thecube').delay(500).fadeOut('slow');
+   $('.container-fluid').removeClass('loader');
+})
+
 $(document).ready(function(){
 	$(window).on('load resize', windowMobile);
 
-	$('.cssload-thecube').fadeOut();
-	$('.container-fluid').removeClass('loader');
+	/*Cделать функцию очистки анимации*/
 
-		/* Анимация */
-		$('.section__head').addClass('animated fadeInDown');
+	/* Анимация */
+	$('.section__head').addClass('animated fadeInDown');
+	$('.about-image').addClass('animated fadeInDown');
 
 
 	
