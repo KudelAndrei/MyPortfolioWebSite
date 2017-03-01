@@ -331,7 +331,9 @@ a
 					text-decoration: none
 					opacity: 1
 					transition-duration: 150ms
-					@include gradient-text('radial-gradient(bottom right, rgba(59,173,227,0.05) 1%, rgba(87,111,230,0.1) 25%, rgba(152,68,183,0.3) 20%, rgba(255,53,127,0.4) 100%)')
+					@include gradient-text('radial-gradient(bottom right, rgba(59,173,227,0.05) 1%, rgba(87,111,230,0.1) 25%, rgba(152,68,183,0.3) 20%, rgba(255,53,127,0.4) 100%)', 'light')
+					background: #fff
+					color: #333
 				h2 
 					font-size: 30px
 					line-height: 60px
@@ -820,7 +822,15 @@ a
 				li.menu__item
 					a
 						color: #fff
-						@include gradient-text('radial-gradient(bottom right, rgba(59,173,227,0.05) 1%, rgba(87,111,230,0.1) 25%, rgba(152,68,183,0.3) 20%, rgba(255,53,127,0.4) 100%)', 'light')
+						h2
+							color: #fff
+							background: linear-gradient(330deg, rgba(59,173,227,0.1) 5%, rgba(87,111,230,0.4) 25%, rgba(152,68,183,0.5) 51%, rgba(255,53,127,0.7) 100%)
+							-webkit-background-clip: text
+							-webkit-text-fill-color: transparent
+						&::hover
+							&::before
+								content: none
+
 						
 			&.menu-img 
 				width: calc(100% - 50px)
