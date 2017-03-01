@@ -589,36 +589,28 @@ a
 		overflow: hidden
 		transition: all ease-in-out 0.3s
 		z-index: 10
+		&::before
+			position: absolute
+			content: ""
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background: linear-gradient(bottom left, rgba(59,173,227,0.2) 0%, rgba(87,111,230,0.2) 25%, rgba(152,68,183,0.2) 51%, rgba(255,53,127,0.3) 100%)
+			z-index: 1
 		img
 			width: 100%
 			transition: all ease-in-out 0.3s
 			transition: all ease-in-out 0.4s
 			filter: grayscale(0.8)
-		&::after
-			position: absolute
-			content: ""
-			top: 0
-			left: 0
-			bottom: 0
-			right: 0
-			background-color: rgba(#fff, 0.2)
-			transition: background-color ease-in-out 0.3s
-			z-index: 0
 
 		&:hover
 			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.19)
 			//box-shadow: 0 3px 6px rgba(#222,0.1), 0 3px 6px rgba(#222,0.2)
 			img
-				filter: grayscale(0) blur(1px)
+				filter: grayscale(0) blur(0.5px)
 				animation: hover-menu 10s infinite linear
 
-			&::after
-				background-color: rgba($color-text, .3)
-				filter: grayscale(0)
-				animation: hover-menu 10s infinite linear
-			&::after
-				background-color: rgba($color-text, .5)
-				z-index: 10
 			.link 
 				right: 10px
 			.date
