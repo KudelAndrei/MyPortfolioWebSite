@@ -640,6 +640,10 @@ a
 		
 /// работы
 .work
+	.wrapper-owl
+		margin-bottom: 50px
+	.section__head
+		margin-bottom: 50px
 	.work__card
 		background-color: #fff
 		margin-bottom: 20px
@@ -747,14 +751,15 @@ a
 			position: absolute
 			bottom: -100px
 			text-align: center
-			font-size: 16px
+			font-size: 18px
+			font-weight: 300
 			width: 100%
-			font-size: 16px
 			opacity: 0
 			transition: 0.5s 0.2s ease bottom, opacity
 			z-index: 1
 			i 
 				margin-right: 10px
+				font-size: 22px
 
 // документация работ
 .work__doc
@@ -770,18 +775,36 @@ a
 		margin-top: 0
 		margin-bottom: 10px
 
-.work__doc-slider
-	position: relative
-	height: 400px
+/* слайдер в документации */
+.work__doc-img
+	max-height: 400px
 	overflow: hidden
-	.slider-img
-		position: absolute
-		opacity: 0
-		width: 100%
-		transition: opacity 0.2s ease
-		&--active
-			opacity: 1
 
+
+
+/* слайдер */
+.owl-work
+	position: relative
+	padding: 0 20px
+	.owl-work
+	
+
+.owl-left, .owl-right
+	position: absolute
+	top: 48%
+	transform: translateY(-50%)
+	font-size: 48px
+	display: inline-block
+	cursor: pointer
+	opacity: 0.5
+	transition: color, opacity, ease 0.2s
+	&:hover
+		color: #701B41
+		opacity: 1
+.owl-left
+	left: -20px
+.owl-right
+	right: -20px
 
 
 

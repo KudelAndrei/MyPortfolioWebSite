@@ -1,9 +1,10 @@
 $(window).on('load', function () {
-   $('.cssload-thecube').delay(500).fadeOut('slow');
-   $('.container-fluid').removeClass('loader');
+	 $('.cssload-thecube').delay(500).fadeOut('slow');
+	 
 })
 
 $(document).ready(function(){
+	$('.container-fluid').removeClass('loader');
 	$(window).on('load resize', windowMobile);
 
 	/*Cделать функцию очистки анимации*/
@@ -67,26 +68,6 @@ $(document).ready(function(){
 	}
 	*/
 
-	
-
-	$('.link-more').click(function(){
-		if ($('.work__doc').hasClass('mfp-hide')){
-			setInterval(nextSlide, 6000);	
-		}
-		clearInterval(nextSlide);
-		
-	});
-
-	var slides = document.querySelectorAll('.work__doc-slider .slider-img');
-	var currentSlide = 0;
-
-	function nextSlide(){
-		slides[currentSlide].className = 'slider-img';
-		currentSlide = (currentSlide+1)%slides.length;
-		slides[currentSlide].className = 'slider-img slider-img--active';
-	}
-
-
 	/* Функция выполняется при наведении на меню и при нажатии */
 	function hoverMenu(){
 		if($(this).hasClass('menu__item--about')){
@@ -124,7 +105,8 @@ $(document).ready(function(){
 				$('.section').removeClass('section--active');
 				$('.work').fadeIn(500);
 				/* анимация */
-				$('.work__card').addClass('animated fadeInDown');
+				$('.work__card').addClass('animated fadeInUp');
+				$('.owl-work').addClass('animated zoomIn');
 				/* end */
 			});
 		}
@@ -157,15 +139,15 @@ $(document).ready(function(){
 
 	/*
 	function getRandomArbitrary(min, max) {
-	  return Math.random() * (max - min) + min;
+		return Math.random() * (max - min) + min;
 	}
 	function parallaxWork(){
 		var scrolled = $(window).scrollTop()/getRandomArbitrary(10, 20);
-	  	$('.work__card').css('background-position-y',-(scrolled)+'px');
-	  	console.log(scrolled);
+			$('.work__card').css('background-position-y',-(scrolled)+'px');
+			console.log(scrolled);
 	};
 	$(window).scroll(function(e){
-	  parallaxWork();
+		parallaxWork();
 	});
 	*/
 
@@ -194,35 +176,67 @@ $(document).ready(function(){
 			$('.text-active').text();
 	});
 
+
+
 	/* Слайдер для work */
 	$('.owl-work').owlCarousel({
 		loop: true,
-    nav: true,
-    responsive:{
-        0:{
-            items: 1
-        },
-        600:{
-            items: 2
-        },
-        1000:{
-            items: 1
-        }
-    }
+		center: true,
+		autowidth: true,
+		autoplay: true, 
+		arrows: false,
+		nav: false,
+		navText: '',
+		dots: false,
+		stagePadding: 50,
+		autoplayTimeout: 5000,
+		margin: 20,
+		autoplayHoverPause: true,
+		responsive:{
+				0:{
+						items: 1
+				},
+				600:{
+						items: 2
+				},
+				1000:{
+						items: 3
+				}
+		}
 	});
+	/* Навигация по слайдам work*/
+	var owl = $('.owl-work');
+	owl.owlCarousel();
+	$('.owl-left').click(function() {
+		owl.trigger('next.owl.carousel');
+	})
+	$('.owl-right').click(function() {
+		owl.trigger('prev.owl.carousel');
+	});
+
+
+	/* Слайдер изображений */
+	$('.work__doc-img').owlCarousel({
+		loop: true,
+		autoplay: true, 
+		arrows: false,
+		dots: false,
+		feide: true,
+		nav: false,
+		navText: '',
+		autoplayTimeout: 4000,
+		items: 1,
+	});
+
 
 	// вспывашки
 	$('.popup-with-zoom-anim').magnificPopup({
 		type: 'inline',
-
 		fixedContentPos: false,
 		fixedBgPos: true,
-
 		overflowY: 'auto',
-
 		closeBtnInside: true,
 		preloader: false,
-		
 		midClick: true,
 		removalDelay: 300,
 		mainClass: 'my-mfp-zoom-in'

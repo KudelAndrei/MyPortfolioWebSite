@@ -24,6 +24,8 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="$color-text">
 
+	<link rel="stylesheet" href="css/main.min.css">
+
 </head>
 
 <body>
@@ -359,31 +361,58 @@
 
 							<!-- карусель данного сайта -->
 							<div class="col-lg-12">
-								<div class="owl-work">
-									<div class="owl-work__item"><h4>Сделать слайдер презентацию</h4></div>
-									<div class="owl-work__item"><h4>2</h4></div>
-									<div class="owl-work__item"><h4>3</h4></div>
-									<div class="owl-work__item"><h4>4</h4></div>
-									<div class="owl-work__item"><h4>5</h4></div>
-									<div class="owl-work__item"><h4>6</h4></div>
+
+								<div class="wrapper-owl">
+
+									<div class="owl-work owl-carousel">
+										<div class="owl-work__item">
+											<div class="owl__img"><img src="img/work/main work/1.png" alt="home"></div>
+											<h2 class="owl__head">Дизайн</h2>
+										</div>
+										<div class="owl-work__item">
+											<div class="owl__img"><img src="img/work/main work/2.png" alt="image"></div>
+											<h2 class="owl__head">Аддаптивность</h2>
+										</div>
+										<div class="owl-work__item">
+											<div class="owl__img"><img src="img/work/main work/3.png" alt="image"></div>
+											<h2 class="owl__head">Кросбраузерность</h2>
+										</div>
+										<div class="owl-work__item">
+											<div class="owl__img"><img src="img/work/main work/3.png" alt="image"></div>
+											<h2 class="owl__head">Кросбраузерность</h2>
+										</div>
+									</div>
+
+									<div class="owl-controls">
+										<div class="owl-nav">
+												<div class="owl-left"><i class="pe-7s-angle-left-circle"></i></div>
+												<div class="owl-right"><i class="pe-7s-angle-right-circle"></i></div>
+										</div>
+									</div>
+
 								</div>
+
+
 							</div>
 
-								
-							<div class="col-lg-8 col-xs-12">
+
+							<!-- работа 1 -->
+							<div class="col-sm-6 col-xs-12">
 								<div class="work__card word__card--hover" >
 									<img src="img/work/work1/1.png" alt="work">
-									<a href="https://kudelandrei.github.io/portfolio1" class="link-work" target="_blank" data-info="Просмотреть"><i class="fa fa-eye" aria-hidden="true"></i>Смотреть</a>
-									<a href="#work-1" class="link-more popup-with-zoom-anim" data-info="Подробнее"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-									<time class="date"><i class="fa fa-calendar" aria-hidden="true"></i>21.10.2016</time>
+									<a href="https://kudelandrei.github.io/portfolio1" class="link-work" target="_blank" data-info="Просмотреть"><i class="pe-7s-look" aria-hidden="true"></i>Смотреть</a>
+									<a href="#work-1" class="link-more popup-with-zoom-anim" data-info="Подробнее"><i class="pe-7s-info" aria-hidden="true"></i></a>
+									<time class="date"><i class="pe-7s-date" aria-hidden="true"></i>21.10.2016</time>
 								
 
 									<div id="work-1" class="work__doc zoom-anim-dialog mfp-hide small-dialog">
-										<div class="work__doc-img work__doc-slider">
-											<img src="img/work/work1/1.png" alt="image" class="slider-img slider-img--active">
+
+										<div class="work__doc-img owl-carousel">
+											<img src="img/work/work1/1.png" alt="image" class="slider-img">
 											<img src="img/work/work1/2.png" alt="image" class="slider-img">
 											<img src="img/work/work1/3.png" alt="image" class="slider-img">
 										</div>
+
 										<div class="work__doc-content">
 											<h1 class="work__doc-head">Документация</h1>
 											<time>20.10.2016</time>
@@ -395,96 +424,63 @@
 								</div>
 							</div>
 
-
-							<div class="col-lg-4 col-sm-6">
-								<div class="work__card word__card--hover">
-									<img src="img/work/2.jpg" alt="work">
-									<a href="https://kudelandrei.github.io/portfolio1" class="link link-work" target="_blank" data-info="Просмотреть"><i class="fa fa-eye" aria-hidden="true"></i></a>
-									<a href="#work-2" class="link link-more popup-with-zoom-anim" data-info="Подробнее"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-									<time class="date"><i class="fa fa-calendar" aria-hidden="true"></i>21.10.2016</time>
-		
-									<div id="work-2" class="zoom-anim-dialog mfp-hide small-dialog">
-										<div class="doc-img"><img src="img/work/1.jpg" alt="image"></div>
-										<div class="work__doc-content">
-											<h1>Документация</h1>
-											<p>Описание в разработке...</p>
-										</div>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-lg-6 col-sm-6">
+							<!-- работа 2 -->
+							<div class="col-sm-6 col-xs-12">
 								<div class="work__card word__card--hover" >
-									<img src="img/work/2.jpg" alt="work">
-									<a href="https://kudelandrei.github.io/portfolio1" class="link link-work" target="_blank" data-info="Просмотреть"><i class="fa fa-eye" aria-hidden="true"></i></a>
-									<a href="#work-3" class="link link-more popup-with-zoom-anim" data-info="Подробнее"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-									<time class="date"><i class="fa fa-calendar" aria-hidden="true"></i>21.10.2016</time>
-								
-									<div id="work-3" class="zoom-anim-dialog mfp-hide small-dialog">
-										<div class="doc-img"><img src="img/work/1.jpg" alt="image"></div>
-										<div class="work__doc-content">
-											<h1>Документация</h1>
-											<p>Описание в разработке...</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-6 col-md-4 col-sm-6">
-								<div class="work__card word__card--hover">
-									<img src="img/work/4.jpg" alt="work">
-									<a href="https://kudelandrei.github.io/portfolio1" class="link link-work" target="_blank" data-info="Просмотреть"><i class="fa fa-eye" aria-hidden="true" ></i></a>
-									<a href="#work-4" class="link link-more popup-with-zoom-anim" data-info="Подробнее"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-									<time class="date"><i class="fa fa-calendar" aria-hidden="true"></i>21.10.2016</time>
+									<img src="img/work/work2/1.png" alt="work2">
+									<a href="https://kudelandrei.github.io/portfolio2" class="link-work" target="_blank" data-info="Просмотреть"><i class="pe-7s-look" aria-hidden="true"></i>Смотреть</a>
+									<a href="#work-2" class="link-more popup-with-zoom-anim" data-info="Подробнее"><i class="pe-7s-info" aria-hidden="true"></i></a>
+									<time class="date"><i class="pe-7s-date" aria-hidden="true"></i>21.10.2016</time>
 								
 
-									<div id="work-4" class="zoom-anim-dialog mfp-hide small-dialog">
-										<div class="doc-img"><img src="img/work/1.jpg" alt="image"></div>
-										<div class="work__doc-content">
-											<h1>Документация</h1>
-											<p>Описание в разработке...</p>
+									<div id="work-2" class="work__doc zoom-anim-dialog mfp-hide small-dialog">
+
+										<div class="work__doc-img owl-carousel">
+											<img src="img/work/work2/1.png" alt="image" class="slider-img">
+											<img src="img/work/work2/2.png" alt="image" class="slider-img">
+											<img src="img/work/work2/3.png" alt="image" class="slider-img">
 										</div>
-									</div>
-								</div>
-							</div>
 
-							<div class="col-md-4 col-sm-6">
-								<div class="work__card word__card--hover">
-									<img src="img/work/5.jpg" alt="work">
-									<a href="https://kudelandrei.github.io/portfolio1" class="link link-work" target="_blank" data-info="Просмотреть"><i class="fa fa-eye" aria-hidden="true"></i></a>
-									<a href="#work-5" class="link link-more popup-with-zoom-anim" data-info="Подробнее"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-									<time class="date"><i class="fa fa-calendar" aria-hidden="true"></i>21.10.2016</time>
-
-									
-									<div id="work-5" class="zoom-anim-dialog mfp-hide small-dialog">
-										<div class="doc-img"><img src="img/work/1.jpg" alt="image"></div>
-										<div class="work__doc-content">
-											<h1>Документация</h1>
-											<p>Описание в разработке...</p>
-										</div>
-									</div>
-
-								</div>
-							</div>
-
-							<div class="col-md-4 col-sm-6">
-								<div class="work__card word__card--hover">
-									<img src="img/work/6.jpg" alt="work">
-									<a href="https://kudelandrei.github.io/portfolio1" class="link link-work" target="_blank" data-info="Просмотреть"><i class="fa fa-eye" aria-hidden="true"></i></a>
-									<a href="#work-6" class="link link-more popup-with-zoom-anim" data-info="Подробнее"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-									<time class="date"><i class="fa fa-calendar" aria-hidden="true"></i>21.10.2016</time>
-
-									<div id="work-6" class="work__doc zoom-anim-dialog mfp-hide small-dialog">
-										<div class="doc-img"><img src="img/work/1.jpg" alt="image"></div>
 										<div class="work__doc-content">
 											<h1 class="work__doc-head">Документация</h1>
-											<p>Описание в разработке...</p>
+											<time>22.10.2016</time>
+											<p class="work__doc-descriprion"><span>Описание:</span> верстка Landing Page 1. Страница полностью аддаптивная и кросбраузерная. На странице присутствует небольшая анимация. Так же страница оптимизированна. Время использованное на верстку около 20 часов. </p>
+											<p class="work__doc-stack"><span>Используемые инструменты: </span> html5,sass, jquery, bootstrap, gulp </p>
+											<a href="https://kudelandrei.github.io/portfolio2" target="_blank" class="work__doc-preview">Смотреть</a>
 										</div>
 									</div>
 								</div>
 							</div>
 
+							<!-- работа 3 -->
+							<div class="col-sm-4 col-xs-12">
+								<div class="work__card word__card--hover" >
+									<img src="img/work/work3/1.png" alt="work3">
+									<a href="https://kudelandrei.github.io/portfolio2" class="link-work" target="_blank" data-info="Просмотреть"><i class="pe-7s-look" aria-hidden="true"></i>Смотреть</a>
+									<a href="#work-3" class="link-more popup-with-zoom-anim" data-info="Подробнее"><i class="pe-7s-info" aria-hidden="true"></i></a>
+									<time class="date"><i class="pe-7s-date" aria-hidden="true"></i>24.10.2016</time>
+								
+
+									<div id="work-3" class="work__doc zoom-anim-dialog mfp-hide small-dialog">
+
+										<div class="work__doc-img owl-carousel">
+											<img src="img/work/work3/1.png" alt="image" class="slider-img">
+											<img src="img/work/work3/2.png" alt="image" class="slider-img">
+											<img src="img/work/work3/3.png" alt="image" class="slider-img">
+										</div>
+
+										<div class="work__doc-content">
+											<h1 class="work__doc-head">Документация</h1>
+											<time>24.10.2016</time>
+											<p class="work__doc-descriprion"><span>Описание:</span> верстка Landing Page 3. Страница полностью аддаптивная и кросбраузерная. На странице присутствует небольшая анимация. Так же страница оптимизированна. Время использованное на верстку около 20 часов. </p>
+											<p class="work__doc-stack"><span>Используемые инструменты: </span> html5,sass, jquery, bootstrap, gulp </p>
+											<a href="https://kudelandrei.github.io/portfolio2" target="_blank" class="work__doc-preview">Смотреть</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							
 						</div>
 
 					</section>
@@ -524,7 +520,7 @@
 		</div>
 	</div>
 	
-	<link rel="stylesheet" href="css/main.min.css">
+	
 	<script src="js/scripts.min.js"></script>
 
 </body>
