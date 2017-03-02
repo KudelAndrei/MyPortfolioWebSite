@@ -169,6 +169,17 @@ $(document).ready(function(){
 	});
 	*/
 
+	/* для утсановки одинаковой высоты секии 
+	function heightSkills(){
+		var heightWhite = $('.skills-white').height();
+		if ($(window).width() <= '1030')
+				$('.skills-dark').height(heightWhite);
+			esle 
+				$('.skills-dark').height();
+	}
+	*/
+
+
 
 	/* Вызов функция */
 	$('.logo').click(toggleMenu);
@@ -181,6 +192,23 @@ $(document).ready(function(){
 		$(".wrap-container").toggleClass("menu--active");
 			$(this).removeClass("toggle");
 			$('.text-active').text();
+	});
+
+	/* Слайдер для work */
+	$('.owl-work').owlCarousel({
+		loop: true,
+    nav: true,
+    responsive:{
+        0:{
+            items: 1
+        },
+        600:{
+            items: 2
+        },
+        1000:{
+            items: 1
+        }
+    }
 	});
 
 	// вспывашки

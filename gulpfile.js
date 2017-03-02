@@ -19,7 +19,7 @@ gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
-		'app/libs/common.js',
+		'app/libs/owl/owl.carousel.min.js',
 		'app/js/common.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))

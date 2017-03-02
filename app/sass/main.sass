@@ -381,6 +381,7 @@ a
 .section 
 	.section__head 
 		margin-top: 20px
+		@include gradient-text('radial-gradient(bottom right, rgba(59,173,227,0.4) 20%, rgba(87,111,230,0.4) 29%, rgba(152,68,183,0.5) 60%, rgba(255,53,127,0.7) 100%)', 'light')
 		position: relative
 		span 
 			line-height: 28px
@@ -485,104 +486,106 @@ a
 
 /// навыки
 .section
-	&.skills
-		.skills
-			&--html
-				font-size: 60px
-				.skills-item h1::before
-					color: #e44d26
-			&--css
-				font-size: 50px
-				.skills-item h1::before
-					color: #2062af
-			&--sass 
-				font-size: 30px
-				height: 140px
-				.skills-item h1::before
-					color: #cf649a
-			&--less
-				font-size: 20px
-				height: 80px
-				font-style: italic
-				.skills-item h1::before
-					color: red
-			&--js
-				font-size: 18px
-				text-transform: none
-				.skills-item h1::before
-					color: yellow
-			&--jquery
-				font-size: 28px
-				height: 130px
-				.skills-item h1::before
-					color: #6ba0ab
-			&--ts
-				font-size: 20px
-				height: 90px
-				.skills-item h1::before
-					color: red
-			&--bootstrap
-				font-size: 28px
-				.skills-item h1::before
-					color: #563d7c
-			&--angular
-				font-size: 18px
-				height: 120px
-				.skills-item h1::before
-					color: red
-			&--git
-				font-size: 20px
-				height: 120px
-				.skills-item h1::before
-					color: red
-			&--bem
-				font-size: 28px
-				height: 120px
-				.skills-item h1::before
-					color: red
-.skills
-	text-align: center
-	// скрытая часть //////////////////////////
-	.skills-item
-		position: relative
-		height: 240px
-		background-color: #fff
-		margin-bottom: 20px
-		border-radius: 2px
-		box-shadow: 0 2px 4px rgba(#444,0.1), 0 2px 4px rgba(#444,0.2)
-		transition: box-shadow 0.2s ease-in-out
-		.skills-item__name
-			text-transform: uppercase
-			position: absolute
-			top: 50%
-			text-align: center
-			display: block
-			width: 100%
-			transform: translateY(-50%)
-			h1
-				position: relative
-				display: inline-block
-				&::before
-					position: absolute
-					top: 0
-					left: 0
-					line-height: inherit
-					font-size: inherit
-					font-style: inherit
-					content: attr(data-text)
-					color: #cf649a
-					white-space: nowrap
-					width: 0
-					overflow: hidden
-					transition: all ease 0.4s
-
-		&:hover
-			box-shadow: 0 0 0 rgba(#444,0.1), 0 0 2px rgba(#444,0.2)
+//
+		&.skills
+			.skills
+				&--html
+					font-size: 60px
+					.skills-item h1::before
+						color: #e44d26
+				&--css
+					font-size: 50px
+					.skills-item h1::before
+						color: #2062af
+				&--sass 
+					font-size: 30px
+					height: 140px
+					.skills-item h1::before
+						color: #cf649a
+				&--less
+					font-size: 20px
+					height: 80px
+					font-style: italic
+					.skills-item h1::before
+						color: red
+				&--js
+					font-size: 18px
+					text-transform: none
+					.skills-item h1::before
+						color: yellow
+				&--jquery
+					font-size: 28px
+					height: 130px
+					.skills-item h1::before
+						color: #6ba0ab
+				&--ts
+					font-size: 20px
+					height: 90px
+					.skills-item h1::before
+						color: red
+				&--bootstrap
+					font-size: 28px
+					.skills-item h1::before
+						color: #563d7c
+				&--angular
+					font-size: 18px
+					height: 120px
+					.skills-item h1::before
+						color: red
+				&--git
+					font-size: 20px
+					height: 120px
+					.skills-item h1::before
+						color: red
+				&--bem
+					font-size: 28px
+					height: 120px
+					.skills-item h1::before
+						color: red
+//
+	.skills
+		text-align: center
+		.skills-item
+			position: relative
+			height: 240px
+			background-color: #fff
+			margin-bottom: 20px
+			border-radius: 2px
+			box-shadow: 0 2px 4px rgba(#444,0.1), 0 2px 4px rgba(#444,0.2)
+			transition: box-shadow 0.2s ease-in-out
 			.skills-item__name
-				h1::before
-					width: 100%
+				text-transform: uppercase
+				position: absolute
+				top: 50%
+				text-align: center
+				display: block
+				width: 100%
+				transform: translateY(-50%)
+				h1
+					position: relative
+					display: inline-block
+					&::before
+						position: absolute
+						top: 0
+						left: 0
+						line-height: inherit
+						font-size: inherit
+						font-style: inherit
+						content: attr(data-text)
+						color: #cf649a
+						white-space: nowrap
+						width: 0
+						overflow: hidden
+						transition: all ease 0.4s
+
+			&:hover
+				box-shadow: 0 0 0 rgba(#444,0.1), 0 0 2px rgba(#444,0.2)
+				.skills-item__name
+					h1::before
+						width: 100%
 
 	//новая часть
+.skills
 	.skills-cards, .tools
 		padding-top: 25px
 		.skills-card, .tools__item
@@ -623,10 +626,15 @@ a
 		min-height: 100%
 	.skills-dark
 		background-color: #333
-		color: #fff
+		color: #fff!important
 		min-height: 100%
-		span 
-			color: #fff
+		.dark__head
+			text-transform: uppercase
+			font-size: 50px
+			line-height: 64px
+			margin-top: 0
+			padding-top: 20px
+			margin-bottom: 10px
 
 
 		
@@ -646,7 +654,7 @@ a
 		//box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
 		color: #fff
 		overflow: hidden
-		transition: all ease-in-out 0.3s
+		transition: all ease-in-out 0.5s
 		z-index: 10
 		&::before
 			position: absolute
@@ -670,7 +678,7 @@ a
 			&::before
 				background: linear-gradient(bottom left, rgba(59,173,227,0.05) 0%, rgba(87,111,230,0.05) 25%, rgba(152,68,183,0.15) 51%, rgba(255,53,127,0.25) 100%)
 			img
-				transform: scale(1.05)
+				transform: scale(1.02)
 			.link-work
 				top: 50%
 				opacity: 1
@@ -722,7 +730,7 @@ a
 			top: -100px
 			left: 50%
 			transform: translate(-50%, -50%)
-			transition: background-color, top, opacity, cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s
+			transition: background-color, top, opacity, ease 0.5s
 			background-color: rgba(87,111,230,0.2)
 			display: inline-block
 			padding: 8px 20px
@@ -743,7 +751,7 @@ a
 			width: 100%
 			font-size: 16px
 			opacity: 0
-			transition: 0.3s 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) bottom, opacity
+			transition: 0.5s 0.2s ease bottom, opacity
 			z-index: 1
 			i 
 				margin-right: 10px
@@ -910,8 +918,10 @@ a
 		
 		.skills
 			.skills-dark
-				.section__head
+				.dark__head
 					padding-top: 30px
+					font-size: 38px
+					line-height: 48px
 
 		
 		.about
