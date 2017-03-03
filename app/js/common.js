@@ -1,7 +1,6 @@
 $(window).on('load', function () {
-	 $('.cssload-thecube').delay(500).fadeOut('slow');
-	 
-})
+ $('.cssload-thecube').delay(500).fadeOut('slow');
+});
 
 $(document).ready(function(){
 	setTimeout(function(){
@@ -187,25 +186,25 @@ $(document).ready(function(){
 		center: true,
 		autowidth: true,
 		autoplay: true, 
-		arrows: false,
 		nav: false,
 		navText: '',
 		dots: false,
-		stagePadding: 50,
+		stagePadding: 20,
 		autoplayTimeout: 5000,
 		margin: 20,
 		items: 2,
 		autoplayHoverPause: true,
+		responsiveClass: true,
 		responsive:{
-				320:{
-						items: 1
-				},
-				600: {
-					stagePadding: 0
-				},
-				900: {
-					arrows: false,
-				}
+			0: {
+				items: 1,
+				nav: false,
+				stagePadding: 0,
+				margin: 0,
+			},
+			900: {
+				items: 2,
+			}
 		}
 	});
 	
@@ -224,11 +223,12 @@ $(document).ready(function(){
 	$('.work__doc-img').owlCarousel({
 		loop: true,
 		autoplay: true, 
-		arrows: false,
+		autoplayTimeout: 4000,
 		dots: false,
 		nav: false,
 		navText: '',
-		autoplayTimeout: 4000,
+		items: 1,
+		
 	});
 
 

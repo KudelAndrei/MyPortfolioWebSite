@@ -83,9 +83,8 @@ a
 	height: 67px
 	top: 50%
 	left: 50%
-	transform: translate(-50%, -50%)
+	transform: translate(-50%, -50%) rotateZ(45deg)
 	position: fixed
-	transform: rotateZ(45deg)
 	z-index: 101
 
 .cssload-thecube .cssload-cube 
@@ -106,7 +105,7 @@ a
 	left: 0
 	width: 100%
 	height: 100%
-	background-color: rgb(0,0,0)
+	background-color: rgba(152,68,183,0.7)
 	animation: cssload-fold-thecube 3.48s infinite linear both
 	transform-origin: 100% 100%
 
@@ -132,14 +131,15 @@ a
 @keyframes cssload-fold-thecube 
 	0%, 10% 
 		transform: perspective(126px) rotateX(-180deg)
+		background-color: rgba(255,53,127,0.4)
 		opacity: 0
 	25%, 75% 
 		transform: perspective(126px) rotateX(0deg)
-		background-color: rgba(255,53,127,0.9)
+		background-color: rgba(152,68,183,0.7)
 		opacity: 1
 	90%, 100% 
 		transform: perspective(126px) rotateY(180deg)
-		background-color: rgba(152,68,183,0.6)
+		background-color: rgba(87,111,230,0.4) 
 		opacity: 0
 /////------------------////////////	
 
@@ -414,6 +414,7 @@ a
 		.section__head
 			font-size: 60px
 			line-height: 78px
+			display: block
 			text-transform: uppercase
 	
 	.col-50
@@ -649,7 +650,6 @@ a
 		margin-bottom: 20px
 		border-radius: 2px
 		display: inline-block
-		min-height: 280px
 		max-height: 350px
 		width: 100%
 		position: relative
@@ -685,9 +685,6 @@ a
 				transform: scale(1.02)
 			.link-work
 				top: 50%
-				opacity: 1
-			.date
-				bottom: 30%
 				opacity: 1
 
 			
@@ -738,7 +735,7 @@ a
 			transition: background-color, top, opacity, ease 0.5s
 			background-color: rgba(87,111,230,0.2)
 			display: inline-block
-			padding: 8px 20px
+			padding: 4px 20px
 			opacity: 0
 			@include gradient-border(rgba(255,53,127,0.7), rgba(87,111,230,0.5), 3px, 'to right')
 			border-radius: 5px
@@ -748,19 +745,6 @@ a
 				margin-right: 10px
 			&:hover
 				background-color: rgba(255,53,127,0.5)
-		.date 
-			position: absolute
-			bottom: -100px
-			text-align: center
-			font-size: 18px
-			font-weight: 300
-			width: 100%
-			opacity: 0
-			transition: 0.5s 0.2s ease bottom, opacity
-			z-index: 1
-			i 
-				margin-right: 10px
-				font-size: 22px
 
 // документация работ
 .work__doc
@@ -972,11 +956,6 @@ a
 				.link-work
 					top: 50%
 					opacity: 1
-				.date
-					bottom: 30%
-					opacity: 1
-					i
-						color: #fff
 
 		.contact
 			.contact__head

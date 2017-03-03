@@ -43,6 +43,12 @@
 					h1
 						display: inline-block
 
+	.owl-work
+		padding: 0
+
+	.owl-left, .owl-right
+		display: none
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	.wrap-container 
@@ -78,6 +84,18 @@
 
 	.work__doc
 		margin: 20px
+
+	.container-fluid.mobile
+		.work 
+			.work__card 
+				.link-more
+					top: 5px
+					right: 5px
+				.link-work
+					top: 70%
+					background-color: rgba(255,53,127,0.5)
+
+
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/
