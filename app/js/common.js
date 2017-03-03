@@ -4,7 +4,10 @@ $(window).on('load', function () {
 })
 
 $(document).ready(function(){
-	$('.container-fluid').removeClass('loader');
+	setTimeout(function(){
+		$('.container-fluid').removeClass('loader');
+	}, 500);
+	
 	$(window).on('load resize', windowMobile);
 
 	/*Cделать функцию очистки анимации*/
@@ -191,19 +194,21 @@ $(document).ready(function(){
 		stagePadding: 50,
 		autoplayTimeout: 5000,
 		margin: 20,
+		items: 2,
 		autoplayHoverPause: true,
 		responsive:{
-				0:{
+				320:{
 						items: 1
 				},
-				600:{
-						items: 2
+				600: {
+					stagePadding: 0
 				},
-				1000:{
-						items: 3
+				900: {
+					arrows: false,
 				}
 		}
 	});
+	
 	/* Навигация по слайдам work*/
 	var owl = $('.owl-work');
 	owl.owlCarousel();
@@ -221,11 +226,9 @@ $(document).ready(function(){
 		autoplay: true, 
 		arrows: false,
 		dots: false,
-		feide: true,
 		nav: false,
 		navText: '',
 		autoplayTimeout: 4000,
-		items: 1,
 	});
 
 
