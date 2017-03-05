@@ -1,6 +1,6 @@
 $(window).on('load', function () {
  $('.cssload-thecube').delay(500).fadeOut('slow');
-});
+})
 
 $(document).ready(function(){
 	setTimeout(function(){
@@ -179,6 +179,15 @@ $(document).ready(function(){
 	});
 
 
+
+	/* сладйре изучаемых материалов */
+	$('.owl-study').owlCarousel({
+		loop: true,
+		items: 2,
+		responsiveClass: true,
+		autoplayTimeout: 5000,
+		autoplay: true, 
+	});
 
 	/* Слайдер для work */
 	$('.owl-work').owlCarousel({
