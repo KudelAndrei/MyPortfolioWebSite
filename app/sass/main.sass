@@ -567,126 +567,60 @@ a
 		margin-bottom: 50px
 	.section__head
 		margin-bottom: 50px
-	.work__card
-		background-color: #fff
-		margin-bottom: 20px
-		border-radius: 2px
-		display: inline-block
-		max-height: 350px
-		width: 100%
+	
+	/*Работы*/
+	.work-item
 		position: relative
-		transition: all 0.3s cubic-bezier(.25,.8,.25,1)
-		box-shadow: 0 3px 6px rgba(#222,0.1), 0 3px 6px rgba(#222,0.2)
-		//box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
-		color: #fff
-		overflow: hidden
-		transition: all ease-in-out 0.5s
-		z-index: 10
-		&::before
-			position: absolute
-			content: ""
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
-			background: linear-gradient(top right, rgba(59,173,227,0.1) 20%, rgba(87,111,230,0.15) 40%, rgba(152,68,183,0.25) 61%, rgba(255,53,127,0.35) 100%)
-			z-index: 1
-			transition: inherit
-		img
-			width: 100%
-			transition: all ease-in-out 0.3s
-			transition: all ease-in-out 0.4s
-			filter: grayscale(0.4)
-
-		&:hover
-			box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.19)
-			//box-shadow: 0 3px 6px rgba(#222,0.1), 0 3px 6px rgba(#222,0.2)
-			&::before
-				background: linear-gradient(bottom right, rgba(59,173,227,0.05) 0%, rgba(87,111,230,0.05) 25%, rgba(152,68,183,0.15) 51%, rgba(255,53,127,0.25) 100%)
+		margin-bottom: 50px
+		text-align: center
+		.work-item__img
+			background-color: #e8e8e8
+			display: block
+			padding-top: 20px
+			border-radius: 5px
+			max-height: 300px
+			overflow: hidden
+			box-shadow: 0 12px 24px rgba(0,0,0,0.4)
+			transition: 1s cubic-bezier(0.35,1.69,0.35,0.81)
 			img
-				transform: scale(1.02)
-			.link-work
-				top: 50%
-				opacity: 1
-
-			
-		.link-more
-			position: absolute
-			top: 20px
-			right: 20px
-			width: 40px
-			height: 40px
-			text-align: center
-			background: $gradient
-			border-radius: 50%
-			cursor: pointer
-			z-index: 1
-			line-height: 40px
-			transition: right, opacity, cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s 0.2s
-			i 
-				color: rgba(#fff, 0.7)
-				font-size: 40px
+				max-width: 100%
+				border-radius: 0 0 3px 3px
 			&::before
 				position: absolute
-				content: attr(data-info)
-				color: #fff 
-				background-color: rgba($color-text, .5)
-				display: inline-block
-				font-size: 14px
-				line-height: 40px
-				padding: 0 5px
-				height: 40px
-				border-radius: 5px
+				content: ""
+				width: 6px
+				height: 6px
+				background-color: #fff
+				border-radius: 50%
+				top: 7px
+				left: 7px
+				box-shadow: 10px 0 #fff, 20px 0 #fff
+			&::after
+				content: ""
+				position: absolute
+				top: 20px
+				left: 0
+				bottom: -1px
+				right: 0
+				width: 100%
+				background: linear-gradient(135deg,rgba(255,255,255,1) 0,rgba(255,255,255,0) 100%)
 				opacity: 0
-				top: 0
-				left: -80px
-				transition: opacity ease-in 0.2s
-			&:hover
-				i 
-					color: rgba(#fff, .9)
-				&::before
-					opacity: 1
-		.link-work 
-			position: absolute
-			min-width: 180px
-			z-index: 1
-			color: #fff
-			top: -100px
-			left: 50%
-			transform: translate(-50%, -50%)
-			transition: background-color, top, opacity, ease 0.5s
-			background-color: rgba(87,111,230,0.2)
-			display: inline-block
-			padding: 4px 20px
-			opacity: 0
-			@include gradient-border(rgba(255,53,127,0.7), rgba(87,111,230,0.5), 3px, 'to right')
-			border-radius: 5px
-			font-size: 22px
-			text-transform: uppercase
-			i
-				margin-right: 10px
-			&:hover
-				background-color: rgba(255,53,127,0.5)
+				transition: 1s cubic-bezier(0.35,1.69,0.35,0.81)
+				border-radius: 0 0 3px 3px
 
-// документация работ
-.work__doc
-	background-color: #fff
-	padding: 0
-	max-width: 800px
-	.mfp-close
-		top: -40px
-		color: #fff
-	&-content
-		padding: 20px
-	&-head
-		margin-top: 0
-		margin-bottom: 10px
+		.work-item__head
+			margin-top: 10px
 
-/* слайдер в документации */
-.work__doc-img
-	max-height: 400px
-	overflow: hidden
+		.work-item__tools
+			color: #858585
+			font-size: 14px
 
+		&:hover
+			.work-item__img
+				transform: translateY(-10px)
+				box-shadow: 13px 22px 34px rgba(0,0,0,0.4)
+				&::after
+					opacity: .5
 
 
 /* слайдер */
@@ -696,6 +630,9 @@ a
 	.owl-work__item
 		.owl__img
 			max-height: 400px
+			img
+				max-width: 100%
+				max-height: 100%
 	
 
 .owl-left, .owl-right
