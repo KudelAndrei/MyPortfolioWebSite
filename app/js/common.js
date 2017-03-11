@@ -163,6 +163,11 @@ $(document).ready(function(){
 	}
 	*/
 
+	/* при нажатии на скролл */
+	$('.scroll').click(function(event){
+		var top = $(this).offset().top + 60;		
+		$('body,html').animate({scrollTop: top}, 500);
+	});
 
 
 	/* Вызов функция */
@@ -189,8 +194,8 @@ $(document).ready(function(){
 		autoplay: true, 
 	});
 
-	/* Слайдер для work */
-	$('.owl-work').owlCarousel({
+	/* Слайдер презентация*/
+	$('.owl-works').owlCarousel({
 		loop: true,
 		center: true,
 		autowidth: true,
@@ -200,45 +205,35 @@ $(document).ready(function(){
 		dots: false,
 		stagePadding: 20,
 		autoplayTimeout: 5000,
-		margin: 20,
-		items: 2,
+		margin: 10,
 		autoplayHoverPause: true,
 		responsiveClass: true,
-		responsive:{
-			0: {
-				items: 1,
-				nav: false,
-				stagePadding: 0,
-				margin: 0,
+		responsive: {
+		 0:{
+				items:2,
 			},
-			900: {
-				items: 2,
+			650:{
+				items:3,
+			},
+			1000:{
+				items:4,
+			},
+			1360:{
+				items:5,
 			}
 		}
 	});
 	
 	/* Навигация по слайдам work*/
-	var owl = $('.owl-work');
+	var owl = $('.owl-works');
 	owl.owlCarousel();
 	$('.owl-left').click(function() {
-		owl.trigger('next.owl.carousel');
+		owl.trigger('prev.owl.carousel');
 	})
 	$('.owl-right').click(function() {
-		owl.trigger('prev.owl.carousel');
+		owl.trigger('next.owl.carousel');
 	});
 
-
-	/* Слайдер изображений */
-	$('.work__doc-img').owlCarousel({
-		loop: true,
-		autoplay: true, 
-		autoplayTimeout: 4000,
-		dots: false,
-		nav: false,
-		navText: '',
-		items: 1,
-		
-	});
 
 
 	// вспывашки
