@@ -561,7 +561,7 @@ a
 		img
 			height: 100%
 		
-/// работы
+///////* работы *////////
 .work
 	.wrapper-owl
 		margin-bottom: 50px
@@ -569,7 +569,7 @@ a
 	.section__head
 		margin-bottom: 50px
 	
-	/*Работы*/
+	/* карточки работ */
 	.work-item
 		position: relative
 		margin-bottom: 50px
@@ -586,6 +586,7 @@ a
 			img
 				max-width: 100%
 				border-radius: 0 0 3px 3px
+				background-color: #ccc
 			&::before
 				position: absolute
 				content: ""
@@ -615,6 +616,7 @@ a
 		.work-item__tools
 			color: #858585
 			font-size: 14px
+			line-height: 18px
 
 		&:hover
 			.work-item__img
@@ -668,7 +670,7 @@ a
 /* слайдер */
 .owl-works
 	position: relative
-	padding: 30px 0 70px
+	padding: 30px 0 80px
 	background-color: #17161e
 
 .owl-item
@@ -680,9 +682,16 @@ a
 		.owl-works__img
 			padding: 50px 10px 70px
 			border-radius: 20px
-			transition: background-color 0.3s ease-in
+			transition: background-color, 0.3s ease-in
+			img
+				filter: blur(2px)
+				transition: filter ease-in-out 0.2s
+				background-color: #ccc
 		&:hover
 			opacity: 0.8
+			.owl-works__img
+				img
+					filter: blur(1px)
 	&.center
 		.owl-works__item
 			opacity: 1
@@ -690,6 +699,8 @@ a
 			.owl-works__img
 				box-sizing: border-box
 				background-color: #e8e8e8
+				img
+					filter: blur(0)
 				&::before
 					position: absolute
 					content: ""
@@ -717,21 +728,28 @@ a
 	width: 100px
 	top: 50%
 	transform: translateY(-50%)
-	font-size: 48px
 	display: inline-block
 	cursor: pointer
 	opacity: 0.5
 	transition: color, opacity, ease-in-out 0.3s
-	z-index: 1
+	z-index: 2
+	i
+		position: absolute
+		top: calc(50% - 50px)
+		color: #fff
+		font-size: 100px
 	&:hover
-		color: #701B41
-		opacity: 0.7
+		opacity: 0.8
 .owl-left
 	left: 0
 	background: linear-gradient(left,rgba(255,255,255,0.3) 0,rgba(255,255,255,0) 100%)
+	i 
+		left: -10px
 .owl-right
 	right: 0
 	background: linear-gradient(right,rgba(255,255,255,0.3) 0,rgba(255,255,255,0) 100%)
+	i
+		right: -10px
 
 
 

@@ -16,7 +16,12 @@ $(document).ready(function(){
 	$('.about-image').addClass('animated fadeInDown');
 
 
-	
+
+	/* выравнивание по высоте */
+	$('.work-item__tools').equalHeights();
+
+
+
 	/* Функция для постепенного появления меню */
 	function loadMenu(){
 		$('.menu__item').each(function(i){
@@ -107,8 +112,8 @@ $(document).ready(function(){
 				$('.section').removeClass('section--active');
 				$('.work').fadeIn(500);
 				/* анимация */
-				$('.work__card').addClass('animated fadeInUp');
-				$('.owl-work').addClass('animated zoomIn');
+				$('.wrapper-owl').addClass('animated fadeInDown');
+				$('.work-item').addClass('animated zoomIn');
 				/* end */
 			});
 		}
