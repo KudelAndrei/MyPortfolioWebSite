@@ -43,11 +43,23 @@
 					h1
 						display: inline-block
 
-	.owl-work
-		padding: 0
+	.work
+		.owl-item
+			.owl-works__item
+				.owl-works__img
+					padding: 38px 5px 46px
+					&::before
+						top: 20px
+					&::after
+						width: 30px
+						height: 30px
+				&:hover
+					opacity: 0.8
+			&.center
+				.owl-works__item
+		
 
-	.owl-left, .owl-right
-		display: none
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)

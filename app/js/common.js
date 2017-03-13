@@ -16,7 +16,13 @@ $(document).ready(function(){
 	$('.about-image').addClass('animated fadeInDown');
 
 
-	
+
+	/* выравнивание по высоте */
+	//$('.work-item img').equalHeights();
+	$('.work-item__tools').equalHeights();
+
+
+
 	/* Функция для постепенного появления меню */
 	function loadMenu(){
 		$('.menu__item').each(function(i){
@@ -107,8 +113,8 @@ $(document).ready(function(){
 				$('.section').removeClass('section--active');
 				$('.work').fadeIn(500);
 				/* анимация */
-				$('.work__card').addClass('animated fadeInUp');
-				$('.owl-work').addClass('animated zoomIn');
+				$('.wrapper-owl').addClass('animated fadeInDown');
+				$('.work-item').addClass('animated zoomIn');
 				/* end */
 			});
 		}
@@ -119,7 +125,7 @@ $(document).ready(function(){
 				$('.section').removeClass('section--active');
 				$('.contact').fadeIn(500);
 				/* анимация */
-				$('.skills-card, .tools__item').each(function(i){
+				$('.contact-info__item, .contact-social__item').each(function(i){
 					setTimeout(function() {
 						$('.contact-info__item, .contact-social__item').eq(i).addClass('animated fadeInUp');
 					}, 200*i);		
@@ -163,6 +169,11 @@ $(document).ready(function(){
 	}
 	*/
 
+	/* при нажатии на скролл */
+	$('.scroll').click(function(event){
+		var top = $(this).offset().top + 60;		
+		$('body,html').animate({scrollTop: top}, 500);
+	});
 
 
 	/* Вызов функция */
@@ -189,8 +200,8 @@ $(document).ready(function(){
 		autoplay: true, 
 	});
 
-	/* Слайдер для work */
-	$('.owl-work').owlCarousel({
+	/* Слайдер презентация*/
+	$('.owl-works').owlCarousel({
 		loop: true,
 		center: true,
 		autowidth: true,
@@ -200,45 +211,38 @@ $(document).ready(function(){
 		dots: false,
 		stagePadding: 20,
 		autoplayTimeout: 5000,
-		margin: 20,
-		items: 2,
+		margin: 10,
 		autoplayHoverPause: true,
 		responsiveClass: true,
-		responsive:{
-			0: {
-				items: 1,
-				nav: false,
-				stagePadding: 0,
-				margin: 0,
+		responsive: {
+		 0:{
+				items:2,
 			},
-			900: {
-				items: 2,
+			650:{
+				items:3,
+			},
+			1000:{
+				items:4,
+			},
+			1360:{
+				items:5,
+			}, 
+			1720: {
+				items:6,
 			}
 		}
 	});
 	
 	/* Навигация по слайдам work*/
-	var owl = $('.owl-work');
+	var owl = $('.owl-works');
 	owl.owlCarousel();
 	$('.owl-left').click(function() {
-		owl.trigger('next.owl.carousel');
+		owl.trigger('prev.owl.carousel');
 	})
 	$('.owl-right').click(function() {
-		owl.trigger('prev.owl.carousel');
+		owl.trigger('next.owl.carousel');
 	});
 
-
-	/* Слайдер изображений */
-	$('.work__doc-img').owlCarousel({
-		loop: true,
-		autoplay: true, 
-		autoplayTimeout: 4000,
-		dots: false,
-		nav: false,
-		navText: '',
-		items: 1,
-		
-	});
 
 
 	// вспывашки
