@@ -61,6 +61,7 @@ $(document).ready(function(){
 	};
 */
 
+
 	/*
 	function eachSlide(){
 		slidefirst = $('.work__doc-slider').children().first();
@@ -134,6 +135,9 @@ $(document).ready(function(){
 			});
 		}
 	};
+
+	/*fsef*/
+	console.log('sef');
 
 	/* Функиция при нажатии на меню */
 	function toggleSection(){
