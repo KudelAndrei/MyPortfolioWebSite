@@ -447,7 +447,7 @@ a
 			background: $gradient
 			z-index: 1
 	.about__content
-		padding: 0 50px
+		padding: 30px 30px 30px 50px
 		width: 60%
 		float: right
 		font-size: 18px
@@ -456,7 +456,6 @@ a
 	.about__head
 		text-align: left
 		font-size: 32px
-		margin-top: 20px
 		strong 
 			font-size: 58px
 			line-height: 74px
@@ -499,7 +498,7 @@ a
 
 			
 	// адукация
-	.about__education, .about__quality
+	.about__education, .about__quality, .about__motivation
 		margin-bottom: 20px
 		padding: 0 25px
 		a
@@ -514,9 +513,19 @@ a
 			font-family: "Oswald", sans-serif
 			text-indent: 15px
 	
-
-	// личные качества
-	.about__quality
+	.about__bottom
+		border: 2px solid #AF718F
+		color: #AF718F
+		background-color: #fff
+		transition: background-color, color, 0.2s ease
+		text-transform: uppercase
+		border-radius: 30px 
+		padding: 5px 20px
+		margin-right: 10px
+		margin-bottom: 15px
+		&:hover
+			background-color: #AF718F
+			color: #fff
 
 	.about-image
 		display: none
