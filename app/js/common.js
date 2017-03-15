@@ -136,8 +136,23 @@ $(document).ready(function(){
 		}
 	};
 
-	/*fsef*/
-	console.log('sef');
+	/* переход из биографии в работы*/
+	$('#about__link--work').click(function(){
+		$('.section').hide();
+		$('.work').fadeIn();
+		$('.wrapper-owl').addClass('animated zoomIn');
+		$('.work-item').addClass('animated zoomInUp');
+	});
+
+	/* переход из биографии в контакты*/
+	$('#about__link--contact').click(function(){
+		$('.section').hide();
+		$('.contact').fadeIn();
+		$('.contact-info__item').addClass('animated fadeInRight');
+		$('.contact-social__item').addClass('animated fadeInDown');
+	});
+
+
 
 	/* Функиция при нажатии на меню */
 	function toggleSection(){

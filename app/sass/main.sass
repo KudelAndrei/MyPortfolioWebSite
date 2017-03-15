@@ -58,7 +58,7 @@ a
 .container-fluid, .row
 	height: 100%
 
-/// выпадающий текст ///
+/// выпадающий текст
 .falltext
 	opacity: 0
 	transform-origin: top center
@@ -73,7 +73,7 @@ a
 
 
 
-///// прелоадер //////////
+/// прелоадер //////////
 .loader
 	opacity: 0!important
 	display: none!important
@@ -377,7 +377,7 @@ a
 		opacity: 1
 		z-index: 2
 
-/////* общая секция *////
+/// общая секция
 .section 
 	.section__head 
 		margin-top: 20px
@@ -392,7 +392,7 @@ a
 			span
 				animation: animated 1s 0.7s cubic-bezier(.77,0,.18,1) forwards
 
-////* основной контент */////
+//// основной контент
 .wrap-content
 	position: absolute
 	width: calc(100% - 70px)
@@ -428,14 +428,14 @@ a
 ///////////////*о нас*/////////////
 .about
 	.about__image
-		background-position: center center
+		background-position: top center
 		background-size: cover
 		background-repeat: no-repeat
 		background-color: $color-text
 		float: left
 		position: fixed
 		height: 100%
-		width: 50%
+		width: 40%
 		overflow: hidden
 		&::before
 			position: absolute
@@ -447,17 +447,76 @@ a
 			background: $gradient
 			z-index: 1
 	.about__content
-		padding: 0 40px
-		width: 50%
+		padding: 0 50px
+		width: 60%
 		float: right
+		font-size: 18px
+		font-weight: 400
+		color: $color-text
 	.about__head
 		text-align: left
-		color: rgba($color-text, 0.85)
+		font-size: 32px
+		margin-top: 20px
 		strong 
-			color: $color-text
-	.about__description
-		font-size: 16px
-		line-height: 20px
+			font-size: 58px
+			line-height: 74px
+			text-transform: uppercase
+			display: block
+
+	// возвраст
+	.about__age
+		font-size: 30px
+		margin-bottom: 20px
+		>a 
+			@include gradient-text('radial-gradient(bottom right, rgba(59,173,227,0.4) 20%, rgba(87,111,230,0.4) 29%, rgba(152,68,183,0.5) 60%, rgba(255,53,127,0.7) 100%)', 'light')
+			text-decoration: underline
+			&:hover
+				text-decoration: none
+
+	.about__categoria
+		font-size: 22px
+		font-weight: 600
+		text-transform: uppercase
+		display: inline-block
+		margin-right: 20px
+		position: relative
+		margin-left: -25px
+		&::before
+			position: absolute
+			content: ":"
+			font-family: "Open Sans", sans-serif
+			top: 0
+			right: -10px
+		&::after
+			position: absolute
+			content: ""
+			width: 100%
+			height: 15px
+			background: $gradient
+			left: 0
+			bottom: 5px
+			z-index: -1
+
+			
+	// адукация
+	.about__education, .about__quality
+		margin-bottom: 20px
+		padding: 0 25px
+		a
+			font-size: 18px
+			text-decoration: underline
+			font-weight: 500
+			letter-spacing: 1px
+			&:hover
+				text-decoration: none
+				color: inherit
+		p 
+			font-family: "Oswald", sans-serif
+			text-indent: 15px
+	
+
+	// личные качества
+	.about__quality
 
 	.about-image
 		display: none
@@ -491,6 +550,13 @@ a
 		text-align: center
 		font-size: 46px
 		margin-top: 10px
+
+
+		
+		
+	
+
+
 
 
 
