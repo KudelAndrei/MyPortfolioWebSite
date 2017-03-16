@@ -12,10 +12,22 @@ $(document).ready(function(){
 	/*Cделать функцию очистки анимации*/
 
 	/* Анимация */
-	$('.section__head').addClass('animated fadeInDown');
-	$('.about-image').addClass('animated fadeInDown');
+		/* для общих секций */
+		$('.section__head').addClass('animated fadeInDown');
+		$('.about-image').addClass('animated fadeInDown');
 
+		/* для about */
+		$('.about__image').addClass('animated fadeInLeftBig');
+		$('.about__head').addClass('animated fadeInDown');
+		$('.about__age').addClass('animated zoomIn');
+		$('.about__education, .about__quality, .about__motivation, .about__skills').addClass('animated fadeInUp');
 
+		/* для work */
+		$('.wrapper-owl').addClass('animated fadeInDown');
+		$('.work-item').addClass('animated zoomIn');
+
+		/* для contact */
+		
 
 	/* выравнивание по высоте */
 	//$('.work-item img').equalHeights();
@@ -48,34 +60,13 @@ $(document).ready(function(){
 			$('.text-active').text(textHome);
 			$('.wrap-container').removeClass('menu--active');
 			$('.section').fadeOut(700);
+			/* обнуление анимации */
+			$('.contact-info__item, .contact-social__item').each(function(i){
+					$('.contact-info__item, .contact-social__item').eq(i).removeClass('animated fadeInUp');
+			});	
 		}
 	};
 
-/*
-	// для постепенного появления контактов
-	loadContact = function(){
-		$('.contact').siblings().each(function(i){
-			per = $(this).text(i);
-			console.log(per);
-		})
-	};
-*/
-
-
-	/*
-	function eachSlide(){
-		slidefirst = $('.work__doc-slider').children().first();
-		$('.slider-img').siblings().removeClass('slider-img--active');
-		slidefirst.next().addClass('slider-img--active');
-	};
-
-
-	function sliderWork(){
-		if($('.zoom-anim-dialog').hasClass('mfp-hide')){
-			setInterval(eachSlide, 4000);
-		}
-	}
-	*/
 
 	/* Функция выполняется при наведении на меню и при нажатии */
 	function hoverMenu(){
@@ -84,39 +75,29 @@ $(document).ready(function(){
 			$('.menu__image--about').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
-				$('.about').fadeIn(500);
-				/* анимация */
-				$('.about__image').addClass('animated fadeInLeftBig');
-				$('.section__head.about__head').addClass('animated fadeInDown');
-				$('.about__description').addClass('animated fadeInRight');
-				/* end */
+				$('.about').fadeIn(600);
 			});
 		}
+		/*
 		else if ($(this).hasClass('menu__item--skills')){
 			$('.menu__image').siblings().removeClass("hover");
 			$('.menu__image--skills').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
 				$('.skills').fadeIn(500);
-				/* анимация */
 				$('.skills-card, .tools__item').each(function(i){
 					setTimeout(function() {
 						$('.skills-card, .tools__item').eq(i).addClass('animated fadeInUp');
 					}, 200*i);		
 				});
-				/* end */
 			});
-		}
+		} */
 		else if ($(this).hasClass('menu__item--work')){
 			$('.menu__image').siblings().removeClass("hover");
 			$('.menu__image--work').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
-				$('.work').fadeIn(500);
-				/* анимация */
-				$('.wrapper-owl').addClass('animated fadeInDown');
-				$('.work-item').addClass('animated zoomIn');
-				/* end */
+				$('.work').fadeIn(600);
 			});
 		}
 		else if ($(this).hasClass('menu__item--contact')){
@@ -124,7 +105,7 @@ $(document).ready(function(){
 			$('.menu__image--contact').addClass('hover');
 			$(this).click(function(){
 				$('.section').removeClass('section--active');
-				$('.contact').fadeIn(500);
+				$('.contact').fadeIn(600);
 				/* анимация */
 				$('.contact-info__item, .contact-social__item').each(function(i){
 					setTimeout(function() {
@@ -140,16 +121,17 @@ $(document).ready(function(){
 	$('#about__link--work').click(function(){
 		$('.section').hide();
 		$('.work').fadeIn();
-		$('.wrapper-owl').addClass('animated zoomIn');
-		$('.work-item').addClass('animated zoomInUp');
 	});
 
 	/* переход из биографии в контакты*/
 	$('#about__link--contact').click(function(){
 		$('.section').hide();
 		$('.contact').fadeIn();
-		$('.contact-info__item').addClass('animated fadeInRight');
-		$('.contact-social__item').addClass('animated fadeInDown');
+		$('.contact-info__item, .contact-social__item').each(function(i){
+			setTimeout(function() {
+				$('.contact-info__item, .contact-social__item').eq(i).addClass('animated fadeInUp');
+			}, 200*i);		
+		});
 	});
 
 
@@ -163,30 +145,6 @@ $(document).ready(function(){
 		//
 	};
 
-
-	/*
-	function getRandomArbitrary(min, max) {
-		return Math.random() * (max - min) + min;
-	}
-	function parallaxWork(){
-		var scrolled = $(window).scrollTop()/getRandomArbitrary(10, 20);
-			$('.work__card').css('background-position-y',-(scrolled)+'px');
-			console.log(scrolled);
-	};
-	$(window).scroll(function(e){
-		parallaxWork();
-	});
-	*/
-
-	/* для утсановки одинаковой высоты секии 
-	function heightSkills(){
-		var heightWhite = $('.skills-white').height();
-		if ($(window).width() <= '1030')
-				$('.skills-dark').height(heightWhite);
-			esle 
-				$('.skills-dark').height();
-	}
-	*/
 
 	/* при нажатии на скролл */
 	$('.scroll').click(function(event){
@@ -207,7 +165,6 @@ $(document).ready(function(){
 			$(this).removeClass("toggle");
 			$('.text-active').text();
 	});
-
 
 
 	/* сладйре изучаемых материалов */
@@ -261,7 +218,6 @@ $(document).ready(function(){
 	$('.owl-right').click(function() {
 		owl.trigger('next.owl.carousel');
 	});
-
 
 
 	// вспывашки
