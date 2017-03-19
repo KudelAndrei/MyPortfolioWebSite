@@ -1,11 +1,11 @@
 $(window).on('load', function () {
- $('.cssload-thecube').delay(500).fadeOut('slow');
+ $('.cssload-thecube').delay(100).fadeOut('slow');
 })
 
 $(document).ready(function(){
 	setTimeout(function(){
 		$('.container-fluid').removeClass('loader');
-	}, 500);
+	}, 300);
 	
 	$(window).on('load resize', windowMobile);
 
